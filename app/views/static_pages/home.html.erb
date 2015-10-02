@@ -1,9 +1,13 @@
 <div class="center jumbotron">
   <h1>Welcome to GameLogger</h1>
 
+	<% if logged_in? %>
+		<h2>Nothing to do here yet... </h2>
+	<% else %>
   <h2>
     This is the home page for GameLogger
   </h2>
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
+	<% end %>
 </div>
