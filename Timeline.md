@@ -1,6 +1,8 @@
 #Timeline for Project:
 ##Oct 08, what new functionality or technical hurdle will you have complete?
 Have a basic bootstrap-based page deployed on Heroku with User functionality
+
+Edit (2015-10-2): Mission complete! SSL also implemented!
 including optional persistent sessions.
 ##Oct 22, what new functionality or technical hurdle will you have complete?
 Have pretty templating done as well as retro video game database established
