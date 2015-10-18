@@ -1,9 +1,18 @@
+<% if logged_in? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="user_info">
+        <%= render 'shared/user_info' %>
+      </section>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+    </aside>
+  </div>
+<% else %>
 <div class="center jumbotron">
   <h1>Welcome to GameLogger</h1>
 
-	<% if logged_in? %>
-		<h2>Nothing to do here yet... </h2>
-	<% else %>
   <h2>
     This is the home page for GameLogger
   </h2>
