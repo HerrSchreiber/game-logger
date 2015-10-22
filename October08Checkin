@@ -1,6 +1,0 @@
-I was able to get my authentication system all set up on GameLogger. Now users
-can register and have to be activated by email before they can do anything
-(which is nothing at present).
-
-Also, I set up SSL so that it's set up through the GameLogger.co domain name I
-purchased. All that's next is to actually make the site do things!
