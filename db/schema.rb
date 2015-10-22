@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018203145) do
+ActiveRecord::Schema.define(version: 20151022011901) do
+
+  create_table "games", force: :cascade do |t|
+    t.string   "title"
+    t.string   "release"
+    t.string   "publisher"
+    t.string   "platform"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "games", ["title", "platform"], name: "index_games_on_title_and_platform", unique: true
+
+  create_table "possessions", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "game_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "possessions", ["game_id"], name: "index_possessions_on_game_id"
+  add_index "possessions", ["user_id", "game_id"], name: "index_possessions_on_user_id_and_game_id", unique: true
+  add_index "possessions", ["user_id"], name: "index_possessions_on_user_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"

@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
 	has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+	has_many :possessions, dependent: :destroy
+	has_many :games, through: :possessions
 	attr_accessor :remember_token, :activation_token, :reset_token
 	before_save :downcase_email
 	before_create :create_activation_digest 
@@ -90,6 +92,21 @@ class User < ActiveRecord::Base
   def following?(other_user)
     following.include?(other_user)
   end
+
+	# Adds a game to possessions
+	def possess(game)
+		possessions.create(game_id: game.id)
+	end
+
+	# Removes a game from possessions
+	def unpossess(game)
+		possessions.find_by(game_id: game.id).destroy
+	end
+
+	# Returns true if the current user possesses the game
+	def possess?(game)
+		games.include?(game)
+	end
 
   private
 
