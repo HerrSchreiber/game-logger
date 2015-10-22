@@ -1,0 +1,21 @@
+This sprint was not as successful as the last one. I was able to get the
+database ready for adding games collections along with models for the
+individual games as well as possession relationships for many-to-many
+relationships. I've just run into the problem of adding the game data into
+the database. I scraped Wikipedia for the list of games for different consoles,
+and created csv files from the tables which I then turned into arrays of JSON
+objects. I thought that this would make it nice and easy to seed the database
+with, but I'm running into the problem of parsing the file in my seeds.rb file.
+
+Since I spent most of my time fighting with data, the front-end remains
+identical to what it was in the last checkin. All the changes to the backend
+are visible on the games branch, however. For testing purposes, I was able to
+add fake game data to the development database and made sure everything was
+playing nicely together, so as soon as I can figure out how to get my json
+files into the database, it should be a snap to add that functionality to the
+front end.
+
+Lastly, I'm running into the issue of making my website not look like a basic
+bootstrap example. It's not a technical issue, I just have no sense for
+aesthetics. I may have to just focus on making the website functional, rather
+than striking.
