@@ -18,17 +18,6 @@ User.create!(name:  "Example User",
                activated_at: Time.zone.now)
 end
 
-20.times do |n|
-	title = Faker::App.name + " " + Faker::Number.digit
-	release = Faker::Date.backward(10000)
-	publisher = Faker::Company.name
-	platform = "NES"
-	Game.create!(title: title,
-	             release: release,
-	             publisher: publisher,
-	             platform: platform)
-end
-
 # Following relationships
 users = User.all
 user  = users.first
