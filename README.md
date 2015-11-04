@@ -4,4 +4,4 @@ CS504 class.
 
 Current version of site hosted at [GameLogger.co](https://gamelogger.co)
 
-Accompanying Android app repo is [over here](https://github.com/HerrSchreiber/game-logger-app
+Accompanying Android app repo is [over here](https://github.com/HerrSchreiber/game-logger-app)
