@@ -1,0 +1,8 @@
+I spent most of my time in these past 3 weeks learning Android development.
+In the android-tutorial repo on my account, I figured out how to make an
+Android app that can update content using APIs so I can use that same strategy
+for the GameLogger app.
+
+Also, I got all my database stuff figured out and was able to seed all of the
+game data for every NES, SNES, and Genesis game into the database. All that is
+missing at this point is the views for collections.
