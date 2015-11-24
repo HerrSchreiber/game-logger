@@ -1,0 +1,11 @@
+<li id="game-<%= game.id %>">
+  <span class="game"><%= game.title %></span>
+  <span class="timestamp">
+    Added <%= time_ago_in_words(game.created_at) %> ago.
+    <% if true  %>
+      <%= link_to "remove", game, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
+

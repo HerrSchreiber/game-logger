@@ -13,5 +13,12 @@
   </aside>
   <div class="col-md-8">
     <%= render 'follow_form' if logged_in? %>
+    <% if @user.games.any? %>
+      <h3>Games (<%= @user.possessions.count %>)</h3>
+      <ol class="games">
+        <%= render @possessions %>
+      </ol>
+      <%= will_paginate @possessions %>
+    <% end %>
 	</div>
 </div>

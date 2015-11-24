@@ -1,0 +1,11 @@
+<li id="possession-<%= possession.id %>">
+  <span class="game"><%= possession.game.title + " - " + possession.game.platform %></span>
+  <span class="timestamp">
+    Added <%= time_ago_in_words(possession.created_at) %> ago.
+    <% if current_user?(possession.user) %>
+      <%= link_to "Remove", possession, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
+
