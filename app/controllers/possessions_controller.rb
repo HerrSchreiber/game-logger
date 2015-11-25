@@ -1,0 +1,2 @@
+class PossessionsController < ApplicationController
+end
