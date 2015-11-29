@@ -23,9 +23,10 @@ $('#srch-item').typeahead({
 
 $('#selectizable').selectize({
     valueField: 'id',
-    labelField: 'id',
+    labelField: 'title',
 		searchField: 'fake',
 		maxOptions: 5,
+		create: false,
     render: {
         option: function(item, escape) {
             return '<div>' +
@@ -57,4 +58,7 @@ $('#selectizable').selectize({
             }
         });
     }
+}).on('item_add', function(value, $item) {
+	console.log(value);
+	window.location.href='http://google.com';
 });
