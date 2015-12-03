@@ -1,20 +1,22 @@
 <% provide(:title, @game.title) %>
 <div class="row">
   <aside class="col-md-4">
-		<section class="user_info">
-			<%= render 'shared/user_info' %>
-		</section>
-		<section class="stats">
-			<%= render 'shared/stats' %>
-    </section>
+		<% if logged_in? %>
+			<section class="user_info">
+				<%= render 'shared/user_info' %>
+			</section>
+			<section class="stats">
+				<%= render 'shared/stats' %>
+			</section>
+		<% end %>
   </aside>
   <div class="col-md-8">
     <%= render 'possess_form' if logged_in? %>
 		<h3><%= @game.title + " - " + @game.platform %></h3>
 		<h5><%= "Released " + @game.release + " by " + @game.publisher %>
+		<hr/>
+		<h3><%= pluralize(@users.count, "User") + " " + ((@users.count==1)?"has":"have") %> this game: </h3>
     <% if @game.users.any? %>
-			<hr/>
-      <h3><%= pluralize(@users.count, "User") + " " + ((@users.count==1)?"has":"have") %> this game: </h3>
       <ol class="users">
         <%= render @users %>
       </ol>
