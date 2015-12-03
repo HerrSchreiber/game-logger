@@ -15,7 +15,6 @@ gem 'turbolinks',   '2.3.0'
 gem 'jbuilder',     '2.2.3'
 gem 'sdoc',         '0.4.0', group: :doc
 gem 'searchkick'
-gem 'elasticsearch-rails'
 gem 'selectize-rails'
 
 group :development, :test do
