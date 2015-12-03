@@ -1,31 +1,7 @@
-/*var games = new Bloodhound({
-  datumTokenizer: Bloodhound.tokenizers.obj.whitespace('title'),
-  queryTokenizer: Bloodhound.tokenizers.whitespace,
-  remote: {
-    url: '/games/autocomplete?query=%QUERY',
-    wildcard: '%QUERY'
-  }
-});
-
-games.initialize();
-
-// Instantiate the Typeahead UI
-$('#srch-item').typeahead({
-		hint: true,
-		highlight: true,
-		minLength: 1
-	},
-	{
-		name: 'games',
-		displayKey: 'title',
-		source: games.ttAdapter()
-});*/
-
 $('#selectizable').selectize({
     valueField: 'id',
     labelField: 'title',
 		searchField: 'fake',
-		maxOptions: 5,
 		create: false,
     render: {
         option: function(item, escape) {
@@ -57,8 +33,8 @@ $('#selectizable').selectize({
                 callback(res);
             }
         });
-    }
-}).on('item_add', function(value, $item) {
-	console.log(value);
-	window.location.href='http://google.com';
+    },
+		onItemAdd: function(value, $item){
+			window.open('/games/'+value, '_self');
+		}
 });

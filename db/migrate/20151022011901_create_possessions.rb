@@ -9,5 +9,6 @@ class CreatePossessions < ActiveRecord::Migration
 		add_index :possessions, :user_id
 		add_index :possessions, :game_id
 		add_index :possessions, [:user_id, :game_id], unique: true
+		add_index :possessions, :created_at
   end
 end

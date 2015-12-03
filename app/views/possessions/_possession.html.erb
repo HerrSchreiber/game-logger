@@ -1,10 +1,14 @@
 <li id="possession-<%= possession.id %>">
-  <span class="game"><%= possession.game.title + " - " + possession.game.platform %></span>
+	<%if not @feed_items.nil? %>
+		<%= link_to gravatar_for(possession.user, size: 50), possession.user %>
+		<span class="user"><%= link_to possession.user.name, possession.user %> acquired</span>
+	<% end %>
+  <span class="game"><%= link_to possession.game.title + " - " + possession.game.platform, possession.game %></span>
   <span class="timestamp">
     Added <%= time_ago_in_words(possession.created_at) %> ago.
     <% if current_user?(possession.user) %>
-      <%= link_to "Remove", possession, method: :delete,
-                                       data: { confirm: "You sure?" } %>
+      <%= link_to "Remove from collection", possession, method: :delete,
+                                       data: { confirm: "Are you sure you want to remove this game from your collection?" } %>
     <% end %>
   </span>
 </li>

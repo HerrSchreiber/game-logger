@@ -1,0 +1,7 @@
+<div id="possess_form">
+<% if current_user.possess?(@game) %>
+	<%= render 'unpossess' %>
+<% else %>
+	<%= render 'possess' %>
+<% end %>
+</div>
