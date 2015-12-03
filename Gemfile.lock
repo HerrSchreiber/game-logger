@@ -66,6 +66,7 @@ GEM
       elasticsearch-transport (= 1.0.14)
     elasticsearch-api (1.0.14)
       multi_json
+    elasticsearch-rails (0.1.8)
     elasticsearch-transport (1.0.14)
       faraday
       multi_json
@@ -226,6 +227,7 @@ DEPENDENCIES
   bootstrap-will_paginate (= 0.0.10)
   byebug (= 3.4.0)
   coffee-rails (= 4.1.0)
+  elasticsearch-rails
   faker (= 1.4.3)
   guard-minitest (= 2.3.1)
   jbuilder (= 2.2.3)
