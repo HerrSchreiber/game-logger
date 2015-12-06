@@ -5,7 +5,8 @@ CS504 class.
 Current version of site hosted at [GameLogger.co](https://gamelogger.co)
 (if my domain name is still being wonky, you can still get to the website through [Heroku](https://game-logger.herokuapp.com))
 
-Accompanying Android app repo is [over here](https://github.com/HerrSchreiber/game-logger-app)
+~~Accompanying Android app repo is [over here](https://github.com/HerrSchreiber/game-logger-app)~~
+Android app abandoned, but API still works
 ##API
 All API requests require an API key which you can generate with a POST to /api/v1/login
 with the request body "email=your-email&password=your-password"
