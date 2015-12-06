@@ -172,6 +172,7 @@ class ApiController < ApplicationController
 			truncatedGames = []
 			games.each do |game|
 				jsonGame = {}
+				jsonGame["id"] = game.id
 				jsonGame["title"] = game.title
 				jsonGame["platform"] = game.platform
 				jsonGame["release"] = game.release
