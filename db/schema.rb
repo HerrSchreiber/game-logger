@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022011901) do
+ActiveRecord::Schema.define(version: 20151206184130) do
 
   create_table "games", force: :cascade do |t|
     t.string   "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20151022011901) do
     t.datetime "updated_at", null: false
   end
 
+  add_index "possessions", ["created_at"], name: "index_possessions_on_created_at"
   add_index "possessions", ["game_id"], name: "index_possessions_on_game_id"
   add_index "possessions", ["user_id", "game_id"], name: "index_possessions_on_user_id_and_game_id", unique: true
   add_index "possessions", ["user_id"], name: "index_possessions_on_user_id"
@@ -59,6 +60,7 @@ ActiveRecord::Schema.define(version: 20151022011901) do
     t.datetime "activated_at"
     t.string   "reset_digest"
     t.datetime "reset_sent_at"
+    t.string   "api_key"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

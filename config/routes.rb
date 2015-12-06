@@ -23,6 +23,29 @@ Rails.application.routes.draw do
 	resources :possessions, only: [:create, :destroy]
 	resources :games, only: [:show]
 
+	# API routes
+
+	scope '/api' do
+		scope '/v1' do
+			scope '/game' do
+				get '/:game_id' => 'api#showGame'
+				post '/:game_id' => 'api#addGame'
+				delete '/:game_id' => 'api#removeGame'
+				get '/search/:query' => 'api#findGame'
+			end
+			scope '/user' do
+				scope '/:user_id' do
+					get '/' => 'api#showUser'
+					get '/following' => 'api#getFollowing'
+					get '/followers' => 'api#getFollowers'
+					post '/follow' => 'api#follow'
+					delete '/follow' => 'api#unfollow'
+				end
+			end
+			post '/login' => 'api#login'
+		end
+	end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
