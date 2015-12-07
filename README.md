@@ -3,7 +3,7 @@ A website to maintain and share one's collection of retro video games for my
 CS504 class.
 
 Current version of site hosted at [GameLogger.co](https://gamelogger.co)
-(if my domain name is still being wonky, you can still get to the website through [Heroku](https://game-logger.herokuapp.com))
+(if my domain still being wonky, you can still get to the website through [Heroku](https://game-logger.herokuapp.com))
 
 ~~Accompanying Android app repo is [over here](https://github.com/HerrSchreiber/game-logger-app)~~
 Android app abandoned, but API still works
